@@ -6,6 +6,7 @@
 body{
   display: flex;
   justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .urn{
   background-color: #dbd5c9 ;
@@ -20,4 +21,38 @@ body{
 .keyboard{
   background-color: #403a3a;
   margin-left: 30px;
+}
+.keyboard-row{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.keyboard-button{
+  width: 70px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #555;
+  border-radius: 3px;
+}
+.button-white, .button-fix, .button-confirm {
+  color: #000;
+  font-size: 15px;
+  width: 90px;
+}
+.button-white{
+  background-color: #fff;
+}
+.button-fix{
+  background-color: #D35E18;
+}
+.button-confirm{
+  background-color: #48c079;
+  height: 50px;
 }
