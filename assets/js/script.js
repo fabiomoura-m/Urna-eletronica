@@ -1,6 +1,6 @@
 let yourVoteFor = document.querySelector('.division-1-header span');
 let position = document.querySelector('.division-1-position span');
-let candidate = document.querySelector('.division-1-candidate');
+let candidateDescription = document.querySelector('.division-1-candidate');
 let warning = document.querySelector('.display_division-2');
 let candidateImages = document.querySelector('.division-1--right');
 let numbers = document.querySelector('.division-1-numbers');
@@ -23,19 +23,36 @@ function startStage() {
 
   yourVoteFor.style.display = 'none';
   position.innerHTML = stage.titulo;
-  candidate.innerHTML = '';
+  candidateDescription.innerHTML = '';
   warning.style.display = 'none';
   candidateImages.innerHTML = '';
   numbers.innerHTML = numberHtml;
 }
 
-function updateInterface() {}
+function updateInterface() {
+  let stage = etapas[currentStage];
+  // verifica o candidato
+  let candidate = stage.candidatos.filter(item => {
+    if (item.numero === number) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
 
 function clicked(n) {
   let elementNumber = document.querySelector('.number.blink');
   if (elementNumber !== null) {
     elementNumber.innerHTML = n;
-    number = `${number}${n}`;
+    number += n;
+
+    elementNumber.classList.remove('blink');
+    if (elementNumber.nextElementSibling !== null) {
+      elementNumber.nextElementSibling.classList.add('blink');
+    } else {
+      updateInterface();
+    }
   }
 }
 
