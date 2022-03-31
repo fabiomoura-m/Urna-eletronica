@@ -12,6 +12,7 @@ function startStage() {
   let stage = etapas[currentStage];
 
   let numberHtml = '';
+  number = '';
 
   for (let i = 0; i < stage.numeros; i++) {
     if (i === 0) {
@@ -83,7 +84,7 @@ function white() {
 }
 
 function fix() {
-  alert('clicou em Corrige');
+  startStage();
 }
 
 function confirm() {
