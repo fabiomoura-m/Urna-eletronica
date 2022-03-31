@@ -41,7 +41,7 @@ padding-left: 20px;
   display: flex;
   align-items: center;
 }
-.division-1-candidate{
+.division-1-position{
   height: 50px;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@ padding-left: 20px;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-.division-1-candidateDescription{
+.division-1-candidate{
   flex: 1;
   line-height: 30px;
 }
