@@ -103,7 +103,17 @@ function fix() {
 }
 
 function confirm() {
-  alert('clicou em confirma');
+  let stage = etapas[currentStage];
+
+  let confirmedVote = false;
+
+  if (voteWhite === true) {
+    let confirmedVote = true;
+    console.log('confirmando como branco');
+  } else if (number.length === stage.numeros) {
+    let confirmedVote = true;
+    console.log('Confirmando como ' + number);
+  }
 }
 
 startStage();
