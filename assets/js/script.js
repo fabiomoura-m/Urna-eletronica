@@ -39,6 +39,23 @@ function updateInterface() {
       return false;
     }
   });
+  // preenche os dados do candidato
+  if (candidate.length > 0) {
+    candidate = candidate[0];
+    yourVoteFor.style.display = 'block';
+    warning.style.display = 'block';
+    candidateDescription.innerHTML = `
+    Nome: ${candidate.nome} <br>
+    Partido: ${candidate.partido}
+    `;
+
+    let photoHtml = '';
+    for (let i in candidate.fotos) {
+      photoHtml += `<div class="division-1-image"><img src="assets/images/${candidate.fotos[i].url}" alt="">${candidate.fotos[i].legenda}</div>`;
+    }
+
+    candidateImages.innerHTML = photoHtml;
+  }
 }
 
 function clicked(n) {
