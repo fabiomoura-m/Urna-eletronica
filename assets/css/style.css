@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+@keyframes blink{
+  0% {opacity: 0.2;}
+  50% {opacity: 1;}
+  100% {opacity: 0.2;}
+}
 body{
   display: flex;
   justify-content: center;
@@ -17,6 +22,79 @@ body{
   width: 500px;
   height: 320px;
   background: linear-gradient(to right, #e8e8e8, #c1c1c1);
+  border: 2px solid #555;
+  display: flex;
+  flex-direction: column;
+}
+.display_division-1{
+flex: 1;
+display: flex;
+}
+.division-1--left{
+flex: 1;
+display: flex;
+flex-direction: column;
+padding-left: 20px;
+}
+.division-1-header{
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.division-1-candidate{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.division-1-numbers{
+  height: 50px;
+}
+.division-1-numbers .number{
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 40px;
+  font-size: 25px;
+}
+.blink{
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.division-1-candidateDescription{
+  flex: 1;
+  line-height: 30px;
+}
+.division-1--right{
+width: 90px;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+}
+.division-1-image{
+  border: 1px solid #000;
+  background-color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+.division-1-image img{
+  width: 100%;
+}
+.division-1-image.small{
+  width: 80%;
+  font-size: 12px;
+}
+.display_division-2{
+height: 50px;
+font-size: 13px;
+border-top: 2px solid #000;
+padding-left: 10px;
+font-weight: bold;
+display: flex;
+align-items: center;
 }
 .keyboard{
   background-color: #403a3a;
@@ -56,3 +134,4 @@ body{
   background-color: #48c079;
   height: 50px;
 }
+
