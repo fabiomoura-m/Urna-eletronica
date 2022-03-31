@@ -55,6 +55,11 @@ function updateInterface() {
     }
 
     candidateImages.innerHTML = photoHtml;
+  } else {
+    yourVoteFor.style.display = 'block';
+    warning.style.display = 'block';
+    candidateDescription.innerHTML =
+      '<div>NÚMERO ERRADO</div><div class="big-warning blink">VOTO NULO</div>';
   }
 }
 
