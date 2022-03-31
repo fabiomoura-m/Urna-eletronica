@@ -141,6 +141,9 @@ function confirm() {
       document.querySelector('.display').innerHTML =
         '<div class="giant-warning">FIM</div>';
       console.log(votes);
+      setTimeout(() => {
+        window.location.reload();
+      }, 10000);
       audio.play();
     }
   }
