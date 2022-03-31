@@ -7,12 +7,14 @@ let numbers = document.querySelector('.division-1-numbers');
 
 let currentStage = 0;
 let number = '';
+let voteWhite = false;
 
 function startStage() {
   let stage = etapas[currentStage];
 
   let numberHtml = '';
   number = '';
+  voteWhite = false;
 
   for (let i = 0; i < stage.numeros; i++) {
     if (i === 0) {
@@ -26,6 +28,7 @@ function startStage() {
   position.innerHTML = stage.titulo;
   candidateDescription.innerHTML = '';
   warning.style.display = 'none';
+  numbers.style.display = 'block';
   candidateImages.innerHTML = '';
   numbers.innerHTML = numberHtml;
 }
@@ -57,6 +60,7 @@ function updateInterface() {
 
     candidateImages.innerHTML = photoHtml;
   } else {
+    // voto nulo
     yourVoteFor.style.display = 'block';
     warning.style.display = 'block';
     candidateDescription.innerHTML =
@@ -80,7 +84,18 @@ function clicked(n) {
 }
 
 function white() {
-  alert('clicou em branco');
+  if (number === '') {
+    voteWhite = true;
+    yourVoteFor.style.display = 'block';
+    warning.style.display = 'block';
+    numbers.style.display = 'none';
+    candidateDescription.innerHTML =
+      '<div class="big-warning blink">VOTO EM BRANCO</div>';
+  } else {
+    alert(
+      'Para votar em BRANCO o campo deve estar vazio. Aperte CORRIGE para apagar o campo de voto.'
+    );
+  }
 }
 
 function fix() {
