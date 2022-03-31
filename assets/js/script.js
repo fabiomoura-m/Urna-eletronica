@@ -55,9 +55,12 @@ function updateInterface() {
 
     let photoHtml = '';
     for (let i in candidate.fotos) {
-      photoHtml += `<div class="division-1-image"><img src="assets/images/${candidate.fotos[i].url}" alt="">${candidate.fotos[i].legenda}</div>`;
+      if (candidate.fotos[i].small) {
+        photoHtml += `<div class="division-1-image small"><img src="assets/images/${candidate.fotos[i].url}" alt="">${candidate.fotos[i].legenda}</div>`;
+      } else {
+        photoHtml += `<div class="division-1-image"><img src="assets/images/${candidate.fotos[i].url}" alt="">${candidate.fotos[i].legenda}</div>`;
+      }
     }
-
     candidateImages.innerHTML = photoHtml;
   } else {
     // voto nulo
@@ -108,11 +111,19 @@ function confirm() {
   let confirmedVote = false;
 
   if (voteWhite === true) {
-    let confirmedVote = true;
+    confirmedVote = true;
     console.log('confirmando como branco');
   } else if (number.length === stage.numeros) {
-    let confirmedVote = true;
+    confirmedVote = true;
     console.log('Confirmando como ' + number);
+    console.log('fim');
+  }
+
+  if (confirmedVote) {
+    currentStage++;
+    if (etapas[currentStage] !== undefined) {
+      startStage();
+    }
   }
 }
 
