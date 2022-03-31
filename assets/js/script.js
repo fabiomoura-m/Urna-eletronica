@@ -8,6 +8,7 @@ let numbers = document.querySelector('.division-1-numbers');
 let currentStage = 0;
 let number = '';
 let voteWhite = false;
+let votes = [];
 
 function startStage() {
   let stage = etapas[currentStage];
@@ -113,11 +114,20 @@ function confirm() {
   //verifica se o voto foi nulo ou branco para confirmar
   if (voteWhite === true) {
     confirmedVote = true;
-    console.log('confirmando como branco');
+    votes.push({
+      stage: etapas[currentStage].titulo,
+      vote: 'Branco'
+    });
   } else if (number.length === stage.numeros) {
     confirmedVote = true;
-    console.log('Confirmando como ' + number);
-    console.log('fim');
+    votes.push({
+      stage: etapas[currentStage].titulo,
+      vote: number
+    });
+  } else {
+    alert(
+      'Para CONFIRMAR é necessário digitar o número do candidato ou votar em BRANCO'
+    );
   }
 
   // caso voto confirmado, passa para o próximo candidato
@@ -128,6 +138,7 @@ function confirm() {
     } else {
       document.querySelector('.display').innerHTML =
         '<div class="giant-warning">FIM</div>';
+      console.log(votes);
     }
   }
 }
