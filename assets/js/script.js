@@ -110,6 +110,7 @@ function confirm() {
 
   let confirmedVote = false;
 
+  //verifica se o voto foi nulo ou branco para confirmar
   if (voteWhite === true) {
     confirmedVote = true;
     console.log('confirmando como branco');
@@ -119,10 +120,14 @@ function confirm() {
     console.log('fim');
   }
 
+  // caso voto confirmado, passa para o próximo candidato
   if (confirmedVote) {
     currentStage++;
     if (etapas[currentStage] !== undefined) {
       startStage();
+    } else {
+      document.querySelector('.display').innerHTML =
+        '<div class="giant-warning">FIM</div>';
     }
   }
 }
