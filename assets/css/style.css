@@ -49,14 +49,15 @@ padding-left: 20px;
 }
 .division-1-numbers{
   height: 50px;
+  display: flex;
 }
 .division-1-numbers .number{
-  display: inline-block;
+  display: flex;
   width: 30px;
   height: 40px;
   border: 1px solid #000;
-  text-align: center;
-  line-height: 40px;
+  justify-content: center;
+  align-items: center;
   font-size: 25px;
   margin-right: 1px;
 }

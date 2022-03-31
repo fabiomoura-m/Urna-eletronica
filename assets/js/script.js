@@ -29,7 +29,7 @@ function startStage() {
   position.innerHTML = stage.titulo;
   candidateDescription.innerHTML = '';
   warning.style.display = 'none';
-  numbers.style.display = 'block';
+  numbers.style.display = 'flex';
   candidateImages.innerHTML = '';
   numbers.innerHTML = numberHtml;
 }
@@ -111,6 +111,8 @@ function confirm() {
 
   let confirmedVote = false;
 
+  let audio = new Audio('assets/media/fim.mp3');
+
   //verifica se o voto foi nulo ou branco para confirmar
   if (voteWhite === true) {
     confirmedVote = true;
@@ -139,6 +141,7 @@ function confirm() {
       document.querySelector('.display').innerHTML =
         '<div class="giant-warning">FIM</div>';
       console.log(votes);
+      audio.play();
     }
   }
 }
